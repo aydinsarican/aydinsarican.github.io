@@ -1,0 +1,5 @@
+# app-ads.txt — FootballGrid
+# PLACEHOLDER — the owner must replace the commented line below with the exact line AdMob gives
+# (AdMob → Apps → View all apps → app-ads.txt). Remove the leading "# " when you paste it.
+# AdMob only finds this file at the ROOT of the developer website domain (see site/README.md).
+# google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0

@@ -1,0 +1,576 @@
+/* FootballGrid — site stilleri.
+   Renkler FootballGrid/DesignSystem/Tokens/AppColor.swift'ten birebir; ızgara/ikon renkleri
+   uygulama ikonundan. Gece stadı: mat siyah zemin, tepeden mor projektör, soluk saha çizgileri. */
+
+@font-face {
+  font-family: "Bebas Neue";
+  src: url("fonts/BebasNeue-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* Yüzeyler */
+  --bg-pitch: #08080C;
+  --bg-night: #0B0B10;
+  --bg-raised: #13131A;
+  --surface-1: #181822;
+  --surface-2: #1E1E28;
+  --surface-3: #26262F;
+  /* Çizgiler */
+  --line-soft: rgba(52, 52, 67, 0.55);
+  --line-strong: #343443;
+  --line-slot: #3B3B48;
+  /* Metin */
+  --text-primary: #FFFFFF;
+  --text-secondary: #C8C8D0;
+  --text-tertiary: #8E8E99;
+  /* Marka: mor */
+  --brand: #7C3AED;
+  --brand-pressed: #6D28D9;
+  --brand-bright: #A855F7;
+  --brand-highlight: #C084FC;
+  --brand-deep: #2A124D;
+  --brand-soft: rgba(124, 58, 237, 0.14);
+  --brand-border: rgba(124, 58, 237, 0.50);
+  --brand-glow: rgba(124, 58, 237, 0.35);
+  /* Aksan: altın */
+  --gold: #F4B942;
+  --gold-soft: rgba(244, 185, 66, 0.12);
+  --gold-border: rgba(244, 185, 66, 0.45);
+  /* Uygulama ikonu */
+  --icon-purple: #9059F1;
+  --icon-gold: #E3B450;
+  /* Ölçüler */
+  --radius-m: 12px;
+  --radius-l: 16px;
+  --radius-xl: 24px;
+  --gutter: 16px;
+  /* Yazı */
+  --font-display: "Bebas Neue", "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
+  --font-ui: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Inter, Roboto,
+             "Helvetica Neue", Arial, sans-serif;
+  color-scheme: dark;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  background: var(--bg-pitch);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-night);
+  background-image:
+    radial-gradient(90% 520px at 50% -160px, rgba(144, 89, 241, 0.24), transparent 70%),
+    radial-gradient(420px 320px at -60px -80px, rgba(255, 255, 255, 0.05), transparent 70%),
+    radial-gradient(420px 320px at calc(100% + 60px) -80px, rgba(255, 255, 255, 0.05), transparent 70%);
+  background-repeat: no-repeat;
+  color: var(--text-secondary);
+  font: 400 17px/1.6 var(--font-ui);
+  overflow-wrap: break-word;
+}
+
+main { flex: 1 0 auto; }
+
+a {
+  color: var(--brand-highlight);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+a:hover { color: var(--text-primary); }
+
+:focus-visible {
+  outline: 2px solid var(--brand-highlight);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+.wrap {
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+@media (min-width: 640px) {
+  :root { --gutter: 28px; }
+}
+
+.skip {
+  position: absolute;
+  left: var(--gutter);
+  top: -80px;
+  z-index: 10;
+  padding: 10px 16px;
+  border-radius: var(--radius-m);
+  background: var(--brand);
+  color: var(--text-primary);
+  font-weight: 600;
+  text-decoration: none;
+}
+.skip:focus { top: 12px; }
+
+/* MARK: Üst bar */
+
+.site-header { border-bottom: 1px solid var(--line-soft); }
+
+.site-header .wrap {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-areas: "brand lang" "nav nav";
+  align-items: center;
+  gap: 8px 16px;
+  padding-top: 14px;
+  padding-bottom: 8px;
+}
+
+.brand {
+  grid-area: brand;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  color: var(--text-primary);
+  text-decoration: none;
+  justify-self: start;
+}
+.brand .mark { width: 34px; height: 34px; flex: none; }
+.wordmark {
+  font: 400 28px/1 var(--font-display);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  padding-top: 3px;
+}
+.accent { color: var(--brand-bright); }
+
+.site-nav { grid-area: nav; }
+.site-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.site-nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 12px;
+  border-radius: 999px;
+  color: var(--text-secondary);
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.site-nav a:hover { color: var(--text-primary); background: var(--surface-1); }
+.site-nav a[aria-current="page"] {
+  color: var(--text-primary);
+  background: var(--brand-soft);
+  box-shadow: inset 0 0 0 1px var(--brand-border);
+}
+
+.lang {
+  grid-area: lang;
+  display: inline-flex;
+  padding: 3px;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  background: var(--bg-raised);
+}
+.lang a, .lang span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 38px;
+  padding: 0 10px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+}
+.lang a { color: var(--text-tertiary); }
+.lang a:hover { color: var(--text-primary); }
+.lang span { color: var(--text-primary); background: var(--surface-3); }
+
+@media (min-width: 760px) {
+  .site-header .wrap {
+    grid-template-columns: auto 1fr auto;
+    grid-template-areas: "brand nav lang";
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+  .site-nav ul { justify-content: flex-end; }
+}
+
+/* MARK: Ana sayfa */
+
+.hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 44px 0 56px;
+}
+/* Saha: orta yuvarlak + orta çizgi, neredeyse görünmez. */
+.hero::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 50%;
+  top: 50%;
+  width: 620px;
+  height: 620px;
+  margin: -310px 0 0 -310px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  right: 0;
+  top: 50%;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.hero-grid {
+  display: grid;
+  gap: 40px;
+  align-items: center;
+}
+@media (min-width: 880px) {
+  .hero { padding: 80px 0 88px; }
+  .hero-grid { grid-template-columns: 1.15fr 0.85fr; gap: 56px; }
+}
+
+.eyebrow {
+  margin: 0 0 14px;
+  color: var(--gold);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  margin: 0;
+  color: var(--text-primary);
+  font: 400 clamp(60px, 15vw, 112px)/0.92 var(--font-display);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.pitch {
+  margin: 18px 0 0;
+  max-width: 28ch;
+  color: var(--text-primary);
+  font-size: clamp(20px, 2.4vw, 24px);
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.lede {
+  margin: 14px 0 0;
+  max-width: 46ch;
+}
+
+.soon {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin: 28px 0 0;
+  padding: 12px 18px;
+  border: 1px solid var(--gold-border);
+  border-radius: var(--radius-l);
+  background: var(--gold-soft);
+  color: var(--text-secondary);
+  font-size: 15px;
+}
+.soon strong { color: var(--text-primary); font-weight: 700; }
+.soon .dot {
+  width: 8px;
+  height: 8px;
+  flex: none;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 0 0 4px rgba(244, 185, 66, 0.18);
+}
+
+/* Örnek grid — uygulama ikonundaki dizilim: üç mor, bir altın. */
+.board {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+  width: min(100%, 420px);
+  justify-self: center;
+  padding: 14px;
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius-xl);
+  background: linear-gradient(180deg, rgba(30, 30, 40, 0.92), rgba(19, 19, 26, 0.92));
+  box-shadow: 0 40px 90px -40px var(--brand-glow), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+.board > span { aspect-ratio: 1; border-radius: var(--radius-m); }
+.axis { display: grid; place-items: center; }
+.club {
+  width: 60%;
+  aspect-ratio: 1;
+  border-radius: 10px;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.14);
+}
+.club.sash { background: linear-gradient(135deg, var(--a) 0 40%, var(--b) 40% 60%, var(--a) 60%); }
+.club.halves { background: linear-gradient(90deg, var(--a) 50%, var(--b) 50%); }
+.club.stripes { background: repeating-linear-gradient(90deg, var(--a) 0 20%, var(--b) 20% 40%); }
+.club.band { background: linear-gradient(180deg, var(--a) 0 34%, var(--b) 34% 66%, var(--a) 66%); }
+.era {
+  color: var(--text-secondary);
+  font-size: clamp(12px, 3.4vw, 15px);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+
+.cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  border: 1.5px dashed var(--line-slot);
+  background: var(--surface-1);
+}
+.cell svg { width: 38%; height: auto; }
+.cell .pts {
+  color: var(--text-primary);
+  font-size: clamp(12px, 3.2vw, 14px);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+.cell.mine {
+  border: 1.5px solid var(--brand-border);
+  background: rgba(124, 58, 237, 0.18);
+  color: var(--brand-highlight);
+}
+.cell.legend {
+  border: 1.5px solid var(--gold-border);
+  background: rgba(244, 185, 66, 0.14);
+  color: var(--gold);
+}
+
+.section { padding-top: 24px; padding-bottom: 40px; }
+
+.section-title {
+  margin: 0 0 20px;
+  color: var(--text-primary);
+  font: 400 clamp(32px, 6vw, 40px)/1 var(--font-display);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.cards {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+@media (min-width: 640px) { .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1000px) { .cards { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+
+.card {
+  padding: 20px;
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius-l);
+  background: var(--surface-1);
+}
+.card h3 {
+  margin: 14px 0 6px;
+  color: var(--text-primary);
+  font: 400 26px/1 var(--font-display);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+.card p { margin: 0; font-size: 15px; line-height: 1.55; }
+.card-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--brand-border);
+  border-radius: var(--radius-m);
+  background: var(--brand-soft);
+  color: var(--brand-highlight);
+}
+.card-icon svg {
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.checks {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+@media (min-width: 760px) { .checks { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 32px; } }
+.checks li {
+  position: relative;
+  padding-left: 30px;
+}
+.checks li::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 0.42em;
+  width: 16px;
+  height: 16px;
+  border-radius: 5px;
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='m4 8.3 2.6 2.6L12 5.5' fill='none' stroke='%23F4B942' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 16px no-repeat,
+    var(--gold-soft);
+  box-shadow: inset 0 0 0 1px var(--gold-border);
+}
+
+/* MARK: Metin sayfaları */
+
+.prose {
+  max-width: 70ch;
+  padding: 40px 0 56px;
+}
+@media (min-width: 760px) { .prose { padding-top: 64px; } }
+
+.prose h1 {
+  margin: 0;
+  color: var(--text-primary);
+  font: 400 clamp(46px, 11vw, 76px)/0.95 var(--font-display);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.prose h2 {
+  margin: 40px 0 12px;
+  padding-top: 28px;
+  border-top: 1px solid var(--line-soft);
+  color: var(--text-primary);
+  font: 400 clamp(26px, 5vw, 32px)/1.05 var(--font-display);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  scroll-margin-top: 16px;
+}
+
+.prose p, .prose ul, .prose ol { margin: 0 0 16px; }
+.prose ul, .prose ol { padding-left: 22px; }
+.prose li { margin-bottom: 10px; padding-left: 4px; }
+.prose li::marker { color: var(--brand-bright); }
+.prose strong, .prose b { color: var(--text-primary); font-weight: 650; }
+.prose em { color: var(--text-primary); }
+
+.updated {
+  display: inline-block;
+  margin: 18px 0 8px !important;
+  padding: 6px 12px;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  background: var(--bg-raised);
+  color: var(--text-tertiary);
+  font-size: 14px;
+}
+.updated time { color: var(--text-secondary); }
+
+.legal > .updated + p { margin-top: 20px; }
+
+.intro { margin-top: 18px !important; font-size: 18px; color: var(--text-secondary); }
+
+.path {
+  font-weight: 650;
+  color: var(--text-primary);
+}
+
+.contact-card {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 12px;
+  padding: 14px 18px;
+  border: 1px solid var(--brand-border);
+  border-radius: var(--radius-l);
+  background: var(--brand-soft);
+}
+.contact-label {
+  color: var(--text-tertiary);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.contact-card a { font-weight: 600; font-size: 18px; }
+
+.toc {
+  margin: 28px 0 8px;
+  padding: 18px 20px 6px;
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius-l);
+  background: var(--surface-1);
+}
+.toc ol { margin: 0 0 12px; padding-left: 22px; }
+.toc li { margin-bottom: 8px; }
+.toc li::marker { color: var(--text-tertiary); font-variant-numeric: tabular-nums; }
+.toc a { color: var(--text-secondary); text-decoration: none; }
+.toc a:hover { color: var(--text-primary); text-decoration: underline; }
+
+/* MARK: Alt bilgi */
+
+.site-footer {
+  margin-top: 24px;
+  padding: 28px 0 40px;
+  border-top: 1px solid var(--line-soft);
+  background: var(--bg-pitch);
+  color: var(--text-tertiary);
+  font-size: 14px;
+  line-height: 1.55;
+}
+.site-footer p { margin: 0 0 10px; }
+.site-footer .notice { color: var(--text-secondary); font-weight: 600; }
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 4px;
+  margin: 4px 0 14px -10px;
+  padding: 0;
+  list-style: none;
+}
+.footer-links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 10px;
+  color: var(--text-secondary);
+}
+.footer-links a:hover { color: var(--text-primary); }
+.fine { max-width: 80ch; }
+
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
+
+@media print {
+  body, body * { color: #000 !important; background: none !important; box-shadow: none !important; }
+  .site-header nav, .skip, .hero::before, .hero::after { display: none; }
+}

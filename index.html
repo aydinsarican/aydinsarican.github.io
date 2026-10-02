@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FootballGrid — the football trivia grid for iPhone</title>
+  <meta name="description" content="Rows are clubs, columns are clubs: name a footballer who played for both. Daily grid, live 1v1, career path and a card collection.">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#0B0B10">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="alternate" hreflang="en" href="index.html">
+  <link rel="alternate" hreflang="tr" href="tr/index.html">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="index.html" aria-label="FootballGrid home" aria-current="page">
+        <svg class="mark" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+          <defs><linearGradient id="mark-bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#392F4E"/><stop offset="1" stop-color="#0C0C14"/></linearGradient></defs>
+          <rect width="64" height="64" rx="14" fill="url(#mark-bg)"/>
+          <g fill="none" stroke="#3B3B48" stroke-width="1.2"><rect x="26.6" y="12.6" width="10.8" height="10.8" rx="2.6"/><rect x="12.6" y="26.6" width="10.8" height="10.8" rx="2.6"/><rect x="40.6" y="26.6" width="10.8" height="10.8" rx="2.6"/><rect x="12.6" y="40.6" width="10.8" height="10.8" rx="2.6"/><rect x="26.6" y="40.6" width="10.8" height="10.8" rx="2.6"/></g>
+          <g fill="#9059F1"><rect x="12" y="12" width="12" height="12" rx="3"/><rect x="26" y="26" width="12" height="12" rx="3"/><rect x="40" y="40" width="12" height="12" rx="3"/></g>
+          <rect x="40" y="12" width="12" height="12" rx="3" fill="#E3B450"/>
+        </svg>
+        <span class="wordmark" lang="en" aria-hidden="true">Football<span class="accent">Grid</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="privacy.html">Privacy</a></li>
+          <li><a href="terms.html">Terms</a></li>
+          <li><a href="support.html">Support</a></li>
+        </ul>
+      </nav>
+      <nav class="lang" aria-label="Language"><span aria-current="true" title="English">EN</span><a href="tr/index.html" hreflang="tr" lang="tr" aria-label="Türkçe">TR</a></nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Football trivia for iPhone</p>
+          <h1 lang="en">Football<span class="accent">Grid</span></h1>
+          <p class="pitch">Rows are clubs. Columns are clubs. Name a player who played for both.</p>
+          <p class="lede">A new grid every day, real-time duels, careers to decode and a card for every player you get right.</p>
+          <p class="soon"><span class="dot" aria-hidden="true"></span><span><strong>App Store</strong> — coming soon</span></p>
+        </div>
+        <div class="board" role="img" aria-label="Example grid: three clubs across the top, two clubs and an era down the side, four cells already solved.">
+          <span class="corner"></span>
+          <span class="axis"><span class="club sash" style="--a:#F4F4F6;--b:#D7263D"></span></span>
+          <span class="axis"><span class="club halves" style="--a:#1D4ED8;--b:#F4F4F6"></span></span>
+          <span class="axis"><span class="club stripes" style="--a:#F2C230;--b:#121218"></span></span>
+          <span class="axis"><span class="club band" style="--a:#0F766E;--b:#F4F4F6"></span></span>
+          <span class="cell mine"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m5 12.5 4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="pts">+24</span></span>
+          <span class="cell"></span>
+          <span class="cell legend"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z" fill="currentColor"/></svg><span class="pts">+96</span></span>
+          <span class="axis"><span class="club stripes" style="--a:#111827;--b:#E5E7EB"></span></span>
+          <span class="cell"></span>
+          <span class="cell mine"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m5 12.5 4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="pts">+41</span></span>
+          <span class="cell"></span>
+          <span class="axis"><span class="era">2010s</span></span>
+          <span class="cell"></span>
+          <span class="cell"></span>
+          <span class="cell mine"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m5 12.5 4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="pts">+63</span></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap section" aria-labelledby="features-title">
+      <h2 id="features-title" class="section-title">What&#x27;s inside</h2>
+      <ul class="cards">
+          <li class="card">
+            <span class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="5" height="5" rx="1.2"/><rect x="9.5" y="3" width="5" height="5" rx="1.2"/><rect x="16" y="3" width="5" height="5" rx="1.2"/><rect x="3" y="9.5" width="5" height="5" rx="1.2"/><rect x="9.5" y="9.5" width="5" height="5" rx="1.2"/><rect x="16" y="9.5" width="5" height="5" rx="1.2"/><rect x="3" y="16" width="5" height="5" rx="1.2"/><rect x="9.5" y="16" width="5" height="5" rx="1.2"/><rect x="16" y="16" width="5" height="5" rx="1.2"/></svg></span>
+            <h3>Daily Grid</h3>
+            <p>One new 3×3 grid every day, the same for everyone. Nine guesses, each one final — and rarer answers score more.</p>
+          </li>
+          <li class="card">
+            <span class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M13.5 2.5 4.5 13.5h6.5l-1 8 9-11h-6.5z"/></svg></span>
+            <h3>Live 1v1</h3>
+            <p>Take turns claiming cells against a real opponent. Three in a row wins, and every win against a human moves your rating.</p>
+          </li>
+          <li class="card">
+            <span class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="5" cy="18.5" r="2.2"/><circle cx="19" cy="5.5" r="2.2"/><path d="M7 17.2c4-1 2.5-6.2 6.2-7.2 2.2-.6 3.2-1.4 4.3-2.6" fill="none"/></svg></span>
+            <h3>Career Path</h3>
+            <p>A career is revealed club by club, one more with every wrong guess. Name the player early for more points.</p>
+          </li>
+          <li class="card">
+            <span class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="7" y="3" width="12" height="16" rx="2"/><path d="M4.5 6.5v12a2 2 0 0 0 2 2h9" fill="none"/></svg></span>
+            <h3>Collection</h3>
+            <p>Every correct answer unlocks a player card — common, rare or legend. Typographic cards: the name and the career, no photos.</p>
+          </li>
+      </ul>
+    </section>
+
+    <section class="wrap section" aria-labelledby="fair-title">
+      <h2 id="fair-title" class="section-title">Fair by design</h2>
+      <ul class="checks">
+          <li>No sign-up, no password: an anonymous account and a generated nickname.</li>
+          <li>The daily grid works offline.</li>
+          <li>Practice bots are always labelled and never used in anything you pay for.</li>
+          <li>Nothing sold in the app gives an advantage in ranked play.</li>
+          <li>No crests and no player photos — clubs appear as abstract marks in their colours.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p class="notice">Not affiliated with, endorsed by or connected to any club, league or federation.</p>
+      <nav aria-label="Footer">
+        <ul class="footer-links">
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Use</a></li>
+          <li><a href="support.html">Support</a></li>
+          <li><a href="mailto:aydnsrcn@gmail.com">aydnsrcn@gmail.com</a></li>
+          <li><a href="tr/index.html" hreflang="tr" lang="tr">Türkçe</a></li>
+        </ul>
+      </nav>
+      <p class="fine">Club colours are used to identify clubs; no club crests or player images are used. Career data derived from Wikidata (CC0). App Store is a trademark of Apple Inc.</p>
+      <p class="fine">© 2026 FootballGrid</p>
+    </div>
+  </footer>
+</body>
+</html>
